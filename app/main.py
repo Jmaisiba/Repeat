@@ -34,6 +34,7 @@ def get_prediction():
     # interval = req['parameters']['interval']
 
     # job = q.enqueue(predict_task, request_id, user_id, callback_url, interval)
+    #
 
     return jsonify({
         'request_id': request_id,
