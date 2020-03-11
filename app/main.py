@@ -1,15 +1,15 @@
 import os
 
 from flask import Flask, request, jsonify
-# from redis import Redis
-# from rq import Queue
+#  from redis import Redis
+#  from rq import Queue
 
 from .exceptions import InvalidData
 from .tasks import predict_task
 
-# conn = Redis(host=os.getenv("REDIS_HOST", "localhost"), port=os.getenv("REDIS_PORT", 6379))
-# queue = os.getenv("REDIS_QUEUE", "machine-learning")
-# q = Queue(queue, connection=conn)
+#  conn = Redis(host=os.getenv("REDIS_HOST", "localhost"), port=os.getenv("REDIS_PORT", 6379))
+#  queue = os.getenv("REDIS_QUEUE", "machine-learning")
+#  q = Queue(queue, connection=conn)
 
 app = Flask(__name__)
 
@@ -27,18 +27,18 @@ def handle_invalid_data(error):
 
 @app.route('/predict', methods=['POST'])
 def get_prediction():
-    # req = request.get_json()
-    # user_id = req['parameters']['user_id']
-    # callback_url = req.get('callback_url', os.getenv("CALLBACK_URL", None))
-    # request_id = req['request_id']
-    # interval = req['parameters']['interval']
+    #  req = request.get_json()
+    #  user_id = req['parameters']['user_id']
+    #  callback_url = req.get('callback_url', os.getenv("CALLBACK_URL", None))
+    #  request_id = req['request_id']
+    #  interval = req['parameters']['interval']
 
-    # job = q.enqueue(predict_task, request_id, user_id, callback_url, interval)
+    #  job = q.enqueue(predict_task, request_id, user_id, callback_url, interval)
     #
 
     return jsonify({
         'request_id': request_id,
-        # 'queued_at': job
+        #  'queued_at': job
     })
 
 

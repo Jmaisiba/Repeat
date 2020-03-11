@@ -11,6 +11,7 @@ logger = getLogger(__name__)
 logger.setLevel(logging.DEBUG)
 
 
+
 def get_all_features(user_id, interval):
 
     """
